@@ -147,4 +147,5 @@ dmypy.json
 .vim
 
 DataStructures/*
-!DataStructures/.gitkeep
+!DataStructures/List/Tests/*
+!DataStructures/__init__.py
