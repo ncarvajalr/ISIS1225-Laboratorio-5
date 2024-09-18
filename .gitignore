@@ -146,6 +146,3 @@ dmypy.json
 
 .vim
 
-DataStructures/*
-!DataStructures/List/Tests/*
-!DataStructures/__init__.py
