@@ -3,7 +3,7 @@ from DataStructures.List import single_linked_list as lt
 
 un_ordered_list = [30, 50, 22, 10, 11, 13, 15, 14, 12, 17, 19, 18, 16, 20, 21]
 ordered_list = [10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 30, 50]
-inverted_list = [50, 30, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10]
+reference_inverted_list = [50, 30, 22, 21, 20, 19, 18, 17, 16, 15, 14, 13, 12, 11, 10]
 
 def setup_tests():
     empty_list = lt.new_list()
@@ -36,7 +36,7 @@ def sort_criteria_decreasingly(element1, element2):
 @pytest.mark.skip(reason="No implementado aun")
 def test_selection_sort():
 
-    empty_list, one_element_list, random_lista, inverter_list = setup_tests()
+    empty_list, one_element_list, random_lista, inverted_list = setup_tests()
     back_up = random_lista
 
     # Empty list
@@ -59,8 +59,8 @@ def test_selection_sort():
 
     # Inverted list
 
-    lt.selection_sort(inverter_list, sort_criteria_increasingly)
-    assert lt.size(inverter_list) == 15
+    lt.selection_sort(inverted_list, sort_criteria_increasingly)
+    assert lt.size(inverted_list) == 15
     for i in range(0, 15):
         assert lt.get_element(inverted_list, i) == i+1
 
@@ -69,12 +69,12 @@ def test_selection_sort():
     lt.selection_sort(back_up, sort_criteria_decreasingly)
     assert lt.size(back_up) == 15
     for i in range(0, 15):
-        assert lt.get_element(back_up, i) == inverted_list[i]
+        assert lt.get_element(back_up, i) == reference_inverted_list[i]
 
 @pytest.mark.skip(reason="No implementado aun")
 def test_insertion_sort():
 
-    empty_list, one_element_list, random_lista, inverter_list = setup_tests()
+    empty_list, one_element_list, random_lista, inverted_list = setup_tests()
     back_up = random_lista
 
     # Empty list
@@ -97,8 +97,8 @@ def test_insertion_sort():
 
     # Inverted list
 
-    lt.insertion_sort(inverter_list, sort_criteria_increasingly)
-    assert lt.size(inverter_list) == 15
+    lt.insertion_sort(inverted_list, sort_criteria_increasingly)
+    assert lt.size(inverted_list) == 15
     for i in range(0, 14):
         assert lt.get_element(inverted_list, i) == i+1
 
@@ -107,11 +107,11 @@ def test_insertion_sort():
     lt.insertion_sort(back_up, sort_criteria_decreasingly)
     assert lt.size(back_up) == 15
     for i in range(0, 14):
-        assert lt.get_element(back_up, i) == inverted_list[i]
+        assert lt.get_element(back_up, i) == reference_inverted_list[i]
 
 @pytest.mark.skip(reason="No implementado aun")
 def test_shell_sort():
-    empty_list, one_element_list, random_lista, inverter_list = setup_tests()
+    empty_list, one_element_list, random_lista, inverted_list = setup_tests()
     back_up = random_lista
 
     # Empty list
@@ -134,8 +134,8 @@ def test_shell_sort():
 
     # Inverted list
 
-    lt.shell_sort(inverter_list, sort_criteria_increasingly)
-    assert lt.size(inverter_list) == 15
+    lt.shell_sort(inverted_list, sort_criteria_increasingly)
+    assert lt.size(inverted_list) == 15
     for i in range(0, 14):
         assert lt.get_element(inverted_list, i) == i+1
 
@@ -144,11 +144,11 @@ def test_shell_sort():
     lt.shell_sort(back_up, sort_criteria_decreasingly)
     assert lt.size(back_up) == 15
     for i in range(0, 14):
-        assert lt.get_element(back_up, i) == inverted_list[i]
+        assert lt.get_element(back_up, i) == reference_inverted_list[i]
 
 @pytest.mark.skip(reason="No implementado aun")
 def test_merge_sort():
-    empty_list, one_element_list, random_lista, inverter_list = setup_tests()
+    empty_list, one_element_list, random_lista, inverted_list = setup_tests()
     back_up = random_lista
 
     # Empty list
@@ -171,8 +171,8 @@ def test_merge_sort():
 
     # Inverted list
 
-    lt.merge_sort(inverter_list, sort_criteria_increasingly)
-    assert lt.size(inverter_list) == 15
+    lt.merge_sort(inverted_list, sort_criteria_increasingly)
+    assert lt.size(inverted_list) == 15
     for i in range(0, 14):
         assert lt.get_element(inverted_list, i) == i+1
 
@@ -181,11 +181,11 @@ def test_merge_sort():
     lt.merge_sort(back_up, sort_criteria_decreasingly)
     assert lt.size(back_up) == 15
     for i in range(0, 14):
-        assert lt.get_element(back_up, i) == inverted_list[i]
+        assert lt.get_element(back_up, i) == reference_inverted_list[i]
 
 @pytest.mark.skip(reason="No implementado aun")
 def test_quick_sort():
-    empty_list, one_element_list, random_lista, inverter_list = setup_tests()
+    empty_list, one_element_list, random_lista, inverted_list = setup_tests()
     back_up = random_lista
 
     # Empty list
@@ -209,8 +209,8 @@ def test_quick_sort():
 
     # Inverted list
 
-    lt.quick_sort(inverter_list, sort_criteria_increasingly)
-    assert lt.size(inverter_list) == 15
+    lt.quick_sort(inverted_list, sort_criteria_increasingly)
+    assert lt.size(inverted_list) == 15
     for i in range(0, 14):
         assert lt.get_element(inverted_list, i) == i+1
 
@@ -219,4 +219,4 @@ def test_quick_sort():
     lt.quick_sort(back_up, sort_criteria_decreasingly)
     assert lt.size(back_up) == 15
     for i in range(0, 14):
-        assert lt.get_element(back_up, i) == inverted_list[i]
+        assert lt.get_element(back_up, i) == reference_inverted_list[i]
